@@ -1,0 +1,766 @@
+* {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: lighter;
+}
+body{
+    background: rgb(100,255,102);
+    background: linear-gradient(143deg, rgb(255, 255, 255) 0%, rgba(255,255,255,1) 100%);
+}
+h1:hover, h2:hover, h3:hover {
+    color: #28b006; /* Change text color on hover */
+    cursor: pointer;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transform: scale(1.1); /* Slightly enlarge the text */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all effects */
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    box-sizing: border-box;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    width: 100%; /* Use full width of the grid container */
+    justify-content: space-between; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+
+.header h1 {
+    text-align: left;
+    font-size: 38px;
+    margin-left: 50px;
+}
+
+/* From Uiverse.io by Galahhad */
+.ui-btn {
+    display: none;
+    --btn-default-bg: rgb(255, 255, 255);
+    --btn-padding: 15px 20px;
+    --btn-hover-bg: rgb(255, 255, 255);
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: #35c001;
+    --default-btn-color: #000000;
+    --font-size: 16px;
+    /* 👆 this field should not be empty */
+    --font-weight: 600;
+    border-radius: 20px;
+    --font-family: Menlo,Roboto Mono,monospace;
+    /* 👆 this field should not be empty */
+}
+
+/* button settings 👆 */
+
+.ui-btn {
+    margin-right: 50px;
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border: none;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+    border-radius: 20px;
+}
+
+.ui-btn span {
+    letter-spacing: var(--btn-letter-spacing);
+    transition: var(--btn-transition);
+    box-sizing: border-box;
+    position: relative;
+    background: inherit;
+}
+
+.ui-btn span::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    background: inherit;
+}
+
+.ui-btn:hover, .ui-btn:focus {
+    background: var(--btn-hover-bg);
+}
+
+.ui-btn:hover span, .ui-btn:focus span {
+    color: var(--hover-btn-color);
+}
+
+.ui-btn:hover span::before, .ui-btn:focus span::before {
+    animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+    0% {
+        content: "#";
+    }
+
+    5% {
+        content: ".";
+    }
+
+    10% {
+        content: "^{";
+    }
+
+    15% {
+        content: "-!";
+    }
+
+    20% {
+        content: "#$_";
+    }
+
+    25% {
+        content: "№:0";
+    }
+
+    30% {
+        content: "#{+.";
+    }
+
+    35% {
+        content: "@}-?";
+    }
+
+    40% {
+        content: "?{4@%";
+    }
+
+    45% {
+        content: "=.,^!";
+    }
+
+    50% {
+        content: "?2@%";
+    }
+
+    55% {
+        content: "\;1}]";
+    }
+
+    60% {
+        content: "?{%:%";
+        right: 0;
+    }
+
+    65% {
+        content: "|{f[4";
+        right: 0;
+    }
+
+    70% {
+        content: "{4%0%";
+        right: 0;
+    }
+
+    75% {
+        content: "'1_0<";
+        right: 0;
+    }
+
+    80% {
+        content: "{0%";
+        right: 0;
+    }
+
+    85% {
+        content: "]>'";
+        right: 0;
+    }
+
+    90% {
+        content: "4";
+        right: 0;
+    }
+
+    95% {
+        content: "2";
+        right: 0;
+    }
+
+    100% {
+        content: "";
+        right: 0;
+    }
+}
+
+/*.header button {*/
+/*    padding: 8px 16px;*/
+/*    width: 100px;*/
+/*    margin-right: 200px;*/
+/*    font-size: 1rem;*/
+/*    background-color: #ffffff;*/
+/*    color: #000000;*/
+/*    border: 2px solid #414141;*/
+/*    border-radius: 20px;*/
+/*    cursor: pointer;*/
+/*    transition: all 0.3s ease-in-out; !* Smooth transition *!*/
+/*}*/
+
+/*.header button:hover {*/
+/*    background-color: #ffffff; !* Darker background color *!*/
+/*    color: #000000; !* Change text color *!*/
+/*    border: 2px solid #000000; !* Change border color *!*/
+/*    transform: scale(1.05); !* Slight scale-up effect *!*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); !* Subtle shadow for depth *!*/
+/*}*/
+
+
+.main-container {
+    grid-area: main;
+    position: relative; /* Make this the reference for absolute positioning */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000; /* Text color */
+    font-family: "Inria Sans", sans-serif;
+}
+.background-heading {
+    position: relative; /* Allows the background to be positioned within the <h1> */
+    background-size: cover; /* Makes the image cover the text area */
+    color: #000000; /* Adjusts the text color for visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Enhances text readability */
+    padding: 16px 32px; /* Adds padding around the text */
+    margin: 8px 0; /* Spacing between <h1> elements */
+    font-size: 2rem; /* Font size for headings */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+
+
+#background {
+    position: absolute; /* Allows precise positioning within .main-container */
+    bottom: 1150px; /* Adjusts vertical position */
+    left: 0; /* Ensures it starts from the left edge */
+    right: 0; /* Ensures it spans the width */
+    height: 500px; /* Set height for the background */
+    background-size: cover; /* Ensures the image scales properly */
+    z-index: 0; /* Places it behind the text */
+    opacity: 0.6; /* Optional: Makes the background semi-transparent */
+}
+#background image {
+    height: 100%;
+    width: 100%;
+}
+
+.main-container h1 {
+    font-size: 4rem;
+}
+
+/* Flexbox wrapper for aligning rows */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.Motto h2{
+    font-size: 2rem;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: bolder;
+}
+.Motto{
+    gap: 0;
+}
+.content-row {
+    display: flex;
+    align-items: center; /* Vertically aligns images and text */
+    justify-content: center; /* Centers the row */
+}
+
+/* Image styling */
+.left-image {
+    margin-right: 0; /* Adds spacing between the image and text */
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.right-image {
+    margin-left: 0; /* Adds spacing between the text and image */
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* From Uiverse.io by gharsh11032000 */
+/* This is an example, feel free to delete this code */
+.tooltip-container {
+    margin-top: 80px;
+    --background: #35c001;
+    --color: #3ced0e;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color);
+    padding: 0.7em 1.8em;
+    border-radius: 8px;
+    text-transform: uppercase;
+    height: 60px;
+    width: 180px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--color);
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    transform-origin: -100%;
+    transform: scale(1);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tooltip-container span:last-child {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    opacity: 1;
+    background-color: var(--background);
+    z-index: -1;
+    border: 2px solid var(--background);
+    transform: scale(0);
+    transform-origin: 0;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    display: grid;
+    place-items: center;
+}
+
+.tooltip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.3em 0.6em;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    background: var(--background);
+    z-index: -1;
+    border-radius: 8px;
+    scale: 0;
+    transform-origin: 0 0;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+.tooltip::before {
+    position: absolute;
+    content: "";
+    height: 0.6em;
+    width: 0.6em;
+    bottom: -0.2em;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    background: var(--background);
+}
+
+.tooltip-container:hover .tooltip {
+    top: -100%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    scale: 1;
+    animation: shake 0.5s ease-in-out both;
+}
+
+.tooltip-container:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    color: white;
+    border-color: transparent;
+}
+
+.tooltip-container:hover span:last-child {
+    transform: scale(1);
+    left: 0;
+}
+
+.tooltip-container:hover .text {
+    opacity: 0;
+    top: 0;
+    left: 100%;
+    transform: scale(0);
+}
+
+@keyframes shake {
+    0% {
+        rotate: 0;
+    }
+
+    25% {
+        rotate: 7deg;
+    }
+
+    50% {
+        rotate: -7deg;
+    }
+
+    75% {
+        rotate: 1deg;
+    }
+
+    100% {
+        rotate: 0;
+    }
+}
+
+
+.about-section{
+    margin-top: 100px;
+}
+
+.about-section h2{
+    font-size: 3rem;
+}
+
+.courses-section{
+    margin-top: 100px;
+}
+
+.courses-section h2{
+    font-size: 3rem;
+}
+
+.about-section p {
+    font-size: 1.2rem; /* Consistent font size */
+    color: #333333; /* Neutral and readable text color */
+    line-height: 1.8; /* Better line spacing for readability */
+    margin: 0 auto; /* Centers the paragraph */
+    max-width: 800px; /* Restricts content width */
+    text-align: justify; /* Neat alignment for longer content */
+    background-color: #ffffff; /* Light background for contrast */
+    padding: 16px; /* Adds padding inside the text box */
+    border: 1px solid #ddd; /* Subtle border for structure */
+    border-radius: 6px; /* Rounded edges for smooth appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds depth */
+}
+
+/* Courses Section List Styling */
+.courses-section ul {
+    list-style: none; /* Removes default bullet points */
+    margin: 16px auto; /* Centers the list */
+    padding: 0; /* Removes default padding */
+    max-width: 800px; /* Restricts width */
+}
+
+.courses-section ul li {
+    font-size: 1.2rem; /* Matches paragraph font size */
+    color: #444444; /* Slightly darker text */
+    margin: 12px 0; /* Spacing between list items */
+    padding: 10px 16px; /* Padding inside list items */
+    background-color: #ffffff; /* White background for contrast */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Aligns content inside list item */
+    align-items: center; /* Vertically centers content */
+}
+
+.courses-section ul li::before {
+    content: "✔"; /* Adds a checkmark before each item */
+    color: #28b006; /* Matches the "Get Started" button */
+    font-size: 1.4rem; /* Slightly larger for prominence */
+    margin-right: 12px; /* Space between checkmark and text */
+}
+
+
+
+.footer {
+    margin-top: 100px;
+    grid-area: footer;
+    font-size: 1rem;
+    font-style: italic;
+}
+.footer {
+    grid-area: footer;
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text color */
+    padding: 20px 0;
+    text-align: center; /* Centers text */
+}
+
+.footer-content {
+    max-width: 1200px; /* Keeps the footer content width in check */
+    margin: 0 auto; /* Centers the content horizontally */
+    padding: 0 16px; /* Padding on the sides */
+}
+
+.footer p {
+    font-size: 1rem;
+    margin: 0; /* Remove margin from p element */
+}
+
+.footer-links {
+    margin-top: 10px; /* Adds spacing between the copyright text and links */
+}
+
+.footer-links a {
+    color: #fff; /* White text for the links */
+    text-decoration: none; /* Removes underline */
+    margin: 0 10px; /* Adds space between links */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline the links on hover */
+    color: #28b006; /* Change color on hover */
+}
+
+@media (max-width: 768px) {
+    .header h1{
+        margin-left: 10px;
+    }
+}
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(118, 118, 118, 0.71); /* Semi-transparent black background */
+    display: none; /* Initially hidden */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    z-index: 1000; /* Above all other content */
+}
+
+/* From Uiverse.io by Juanes200122 */
+.pl {
+    width: 6em;
+    height: 6em;
+}
+
+.pl__ring {
+    animation: ringA 2s linear infinite;
+}
+
+.pl__ring--a {
+    stroke: #1c7602;
+}
+
+.pl__ring--b {
+    animation-name: ringB;
+    stroke: #a7f2a8;
+}
+
+.pl__ring--c {
+    animation-name: ringC;
+    stroke: #3ced0e;
+}
+
+.pl__ring--d {
+    animation-name: ringD;
+    stroke: #1c7602;
+}
+
+/* Animations */
+@keyframes ringA {
+    from, 4% {
+        stroke-dasharray: 0 660;
+        stroke-width: 20;
+        stroke-dashoffset: -330;
+    }
+
+    12% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -335;
+    }
+
+    32% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -595;
+    }
+
+    40%, 54% {
+        stroke-dasharray: 0 660;
+        stroke-width: 20;
+        stroke-dashoffset: -660;
+    }
+
+    62% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -665;
+    }
+
+    82% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -925;
+    }
+
+    90%, to {
+        stroke-dasharray: 0 660;
+        stroke-width: 20;
+        stroke-dashoffset: -990;
+    }
+}
+
+@keyframes ringB {
+    from, 12% {
+        stroke-dasharray: 0 220;
+        stroke-width: 20;
+        stroke-dashoffset: -110;
+    }
+
+    20% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -115;
+    }
+
+    40% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -195;
+    }
+
+    48%, 62% {
+        stroke-dasharray: 0 220;
+        stroke-width: 20;
+        stroke-dashoffset: -220;
+    }
+
+    70% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -225;
+    }
+
+    90% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -305;
+    }
+
+    98%, to {
+        stroke-dasharray: 0 220;
+        stroke-width: 20;
+        stroke-dashoffset: -330;
+    }
+}
+
+@keyframes ringC {
+    from {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: 0;
+    }
+
+    8% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -5;
+    }
+
+    28% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -175;
+    }
+
+    36%, 58% {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -220;
+    }
+
+    66% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -225;
+    }
+
+    86% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -395;
+    }
+
+    94%, to {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -440;
+    }
+}
+
+@keyframes ringD {
+    from, 8% {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: 0;
+    }
+
+    16% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -5;
+    }
+
+    36% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -175;
+    }
+
+    44%, 50% {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -220;
+    }
+
+    58% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -225;
+    }
+
+    78% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -395;
+    }
+
+    86%, to {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -440;
+    }
+}
+
