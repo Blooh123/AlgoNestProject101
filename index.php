@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="assets/Style/style.css">
     <title>AlgoNest</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
 <div class = "grid-container">
     <div class="grid-item header">
         <h1>AlgoNest🔥</h1>
-        <form action="src/views/login.php" method="POST">
+        <form action="login.php" method="POST">
             <button class="ui-btn" type="submit">
                 <span>Log In</span>
             </button>
